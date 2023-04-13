@@ -1,0 +1,45 @@
+<% include('../Layouts/header.ejs') %>
+
+<h3>Welcome, <%= user.name %></h3>
+
+<table width="100%">
+    <tr>
+        <td>
+            <img src="userimages/<%= user.image %>" width="100px" height="auto" alt="">
+        </td>
+    </tr>
+    <tr>
+        <td>Name :</td>
+        <td><%= user.name %></td>
+    </tr>
+    <tr>
+        <td>Email :</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile Number :</td>
+        <td><%= user.mobile %></td>
+    </tr>
+    <tr>
+        <td>Password :</td>
+        <td><%= user.password %></td>
+    </tr>
+    <tr>
+        <td>Verified User :</td>
+        <td>
+            <% if(user.is_varified == 1){
+                %>
+                <p>Verified</p>
+                <%
+            }
+            %>
+        </td>
+    </tr>
+
+</table>
+<br>
+<a href="/edit?id=<%= user._id %>">Edit</a> <br> <br>
+
+<a href="/logout">Logout</a>
+
+<% include('../Layouts/footer.ejs') %>

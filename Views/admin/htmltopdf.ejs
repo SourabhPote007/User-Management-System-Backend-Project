@@ -1,0 +1,43 @@
+<h2 style="text-align: center;color: brown;">DashBoard</h2>
+<h3 style="text-align: center;color: blue;">Users List</h3>
+<br>
+<table border="1" style="text-align: center;" align="center" width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Image</th>
+        <th>Verified</th>
+    </tr>
+    <%
+    if(users.length > 0){
+        for(let i=0;i<users.length;i++){
+            %>
+            <tr>
+                <td><%= users[i].name %></td> &nbsp;&nbsp;&nbsp;&nbsp;
+                <td><%= users[i].email %></td>
+                <td><%= users[i].mobile %></td>
+                <td><img src="http://127.0.0.1:3000/userimages/<%= users[i].image %>" alt="/userimages/<%= users[i].image %>" width="50px" height="auto"></td>
+                <td><% 
+                    if(users[i].is_varified == 0){
+                    %>
+                    <p>Not Verified</p>
+                    <%
+                    }else{
+                        %>
+                        <p>Verified</p>
+                        <%
+                    }
+                    %></td>
+            </tr>
+            <%
+        }
+    }else{
+        %>
+        <tr>
+            <td colspan="5"> Users Not Found</td>
+        </tr>
+        <%
+    }
+    %>
+</table>

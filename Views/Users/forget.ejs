@@ -1,0 +1,18 @@
+<% include('../Layouts/header.ejs') %>
+
+<h2>Forget</h2>
+
+<% 
+    if(typeof message !== 'undefined'){
+    %>
+        <h4><%= message %></h4>
+    <%
+    }
+%>
+
+<form action="/forget" method="post">
+    <input type="email" name="email" placeholder="Enter Your Email" required>
+    <input type="submit" value="Reset password">
+</form>
+
+<% include('../Layouts/footer.ejs') %>

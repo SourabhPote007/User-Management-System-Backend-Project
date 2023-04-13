@@ -1,0 +1,19 @@
+<% include('../Layouts/header.ejs') %>
+
+<h2>Verification Mail</h2>
+
+<% 
+    if(typeof message !== 'undefined'){
+    %>
+        <h4><%= message %></h4>
+    <%
+    }
+%>
+
+<form action="" method="post">
+    <input type="text" name="email" placeholder="Enter Your Email" required>
+    <br> <br>
+    <input type="submit" value="Send Verification Link">
+</form>
+
+<% include('../Layouts/footer.ejs') %>

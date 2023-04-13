@@ -1,0 +1,25 @@
+<% include("../Layouts/header.ejs") %>
+
+
+<h2>Edit User</h2>
+
+<form action="" method="POST">
+    <input type="text" name="name" placeholder="Enter Name" value="<%= user.name %>" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" required>
+    <br><br>
+    <input type="number" name="mobile" placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+    <br><br>
+    <label>Verified</label>
+    <input type="radio" name="verify" value="1" <% if(user.is_varified === 1){%> checked <%} %>>
+    <br><br>
+    <label>Unverified</label>
+    <input type="radio" name="verify" value="0" <% if(user.is_varified === 0){%> checked <%} %>>
+    <br><br>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <input type="submit" value="Update User">
+</form>
+
+<a href="/admin/DashBoard">Go To DashBoard</a>
+
+<% include("../Layouts/footer.ejs") %>
